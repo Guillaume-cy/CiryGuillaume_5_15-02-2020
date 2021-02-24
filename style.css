@@ -1,0 +1,51 @@
+h2{
+    color: white;
+}
+
+p{
+    font-size: 14px;
+}
+.bg-pink{
+    background-color: #b735dc;
+}
+.carte{
+    padding-bottom: 50px;
+}
+
+.nav-menu-lg-xl{
+    padding-left: 60%;
+}
+
+.card {
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+@media all and (max-width: 768px)
+{
+
+    .nav-menu-lg-xl{
+        padding-left: 0%;
+    }
+    
+
+    .card {
+        margin-left: 30px;
+    }
+
+
+
+
+}
+
+@media all and (max-width: 425px)
+{
+
+    .card {
+        margin-left: 0px;
+    }
+
+
+
+}
