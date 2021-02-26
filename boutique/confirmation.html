@@ -92,16 +92,23 @@
             
 
         </div>
-
-        <div class="container">
-
-            <h2>Confirmation de commande</h2>
-
-            <p>Nous vous remercions de votre commande</p>
-
-        </div>
-
     </section>
+
+
+        <main class="container" id="main-confirm">
+            <!--Message de remerciement avec ID de commande et prix total-->
+            <!--Complèter la partie ID et total-price avec le JS-->
+            <div class="border border-primary rounded shadow-lg my-5 py-2 text-center">
+                <p id="orderId"></p>
+                <p id="total-price"></p>
+                <p><span class="title-product"> A bientôt chez Orinoco !</span> </p>
+                <!--Bouton de retour à la page d'accueil-->
+                <button class="btn btn-primary" id="btn-confirmation">Retour à la page d'accueil</button>
+            </div>
+    
+        </main>
+
+ 
 
     <section class="footer">
         
@@ -140,7 +147,7 @@
 
     <!-- Optional JavaScript -->
 
-    <script src="../script.js" async></script>
+    <script src="../confirm.js" async></script>
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
