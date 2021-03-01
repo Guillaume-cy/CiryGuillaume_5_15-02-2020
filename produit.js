@@ -93,6 +93,7 @@ function carteProduit (produitSelectionner, idTeddies) {
     let bouttonAcheter = document.createElement("button");
     lienProduit.appendChild(bouttonAcheter);
     bouttonAcheter.classList.add("btn", "btn-primary", "block-right");
+    
 
     // Texte du bouton //
     bouttonAcheter.textContent = "Ajouter au panier";
