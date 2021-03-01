@@ -1,10 +1,10 @@
 # Orinoco #
 
-Ceration de boutique en Js 
+Creation de boutique en Js 
 
- # Architecture générale: # 
+# Architecture générale: # 
 
- L’application web sera composée de 4 pages :
+L’application web sera composée de 4 pages :
 
 ● une page de vue sous forme de liste, montrant tous les articles disponibles
 à la vente ;
@@ -23,6 +23,7 @@ commande, et indiquant le prix total et l'identifiant de commande envoyé
 par le serveur
 
 # Produits présentés #
+
 Dans un premier temps, une seule catégorie de produits sera présentée.
 
 ● ours en peluche faits à la main ;
@@ -61,3 +62,8 @@ can then run the server with `node server`.
 The server should run on `localhost` with default port `3000`. If the
 server runs on another port for any reason, this is printed to the
 console when the server starts, e.g. `Listening on port 3001`.
+
+
+### Repository GitHub à cloner ###
+
+https://github.com/OpenClassrooms-Student-Center/JWDP5.git
