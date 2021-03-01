@@ -84,7 +84,7 @@ function carteProduit (produitSelectionner, idTeddies) {
     let prixOurs = document.createElement("p");
     divPrix.appendChild(prixOurs);
     prixOurs.classList.add("price-produit", "font-weight-bold");
-    prixOurs.textContent = produitSelectionner.price + ' $';
+    prixOurs.textContent = produitSelectionner.price / 100 + ' $';
 
     let lienProduit = document.createElement("a");
     divPrix.appendChild(lienProduit);

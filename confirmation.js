@@ -8,7 +8,7 @@ function validationCommande() {
     messageConfirmation.innerHTML = "Merci pour votre commande n° " + confirmationId;
     const totalPrice = localStorage.getItem("totalOrder");
     const confirmationPrice = document.getElementById("total-price");
-    confirmationPrice.innerHTML = "Prix total : " + totalPrice + " $";
+    confirmationPrice.innerHTML = "Prix total : " + totalPrice / 100 + " $";
 }
 
 

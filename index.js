@@ -73,7 +73,7 @@ function creationCartesPelluches(teddies) {
         let prixOurs = document.createElement("p");
         divPrix.appendChild(prixOurs);
         prixOurs.classList.add("price", "my-2", "font-weight-bold");
-        prixOurs.textContent = teddies[i].price + ' $';
+        prixOurs.textContent = teddies[i].price / 100 + ' $';
 
         let lienProduit = document.createElement("a");
         divPrix.appendChild(lienProduit);

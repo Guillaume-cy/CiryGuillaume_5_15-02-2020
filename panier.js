@@ -46,7 +46,7 @@ function creationDuPanier(itemTeddie, contenuDuPanier) {
 
     let prixDeLours = document.createElement('p');
     divPanier.appendChild(prixDeLours);
-    prixDeLours.textContent = itemTeddie.price;
+    prixDeLours.textContent = itemTeddie.price / 100;
     prixDeLours.classList.add("prix");
 }
 
@@ -67,7 +67,7 @@ function totalPriceOrder(tableauPrix) {
     let total = 0;
     for (i = 0; i < tableauPrix.length; i++) {
         total = total + tableauPrix[i];
-        totalPrice.textContent = "Prix total : " + total + "$";
+        totalPrice.textContent = "Prix total : " + total / 100 + "$";
         //Stockage du prix dans le localStorage pour la page de confirmation
         localStorage.setItem("totalOrder", JSON.stringify(total));
     }
