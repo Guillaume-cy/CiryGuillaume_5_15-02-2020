@@ -28,16 +28,16 @@ getTeddies();
 // Utilisation de l'Id pour creer l'url // 
 function cartePageProduit(teddies) {
     let urlSearch = new URLSearchParams(window.location.search);
-    // console.log(urlSearch);
+    //console.log(urlSearch);
     let idTeddies = urlSearch.get('id');
-    // console.log(idTeddies);
+    //console.log(idTeddies);
     caracteristiqueOurs(teddies, idTeddies);
 }
 
 // Récupération de la peluche correspondant à l'Id //
 function caracteristiqueOurs(teddies, idTeddies) {
     let produitSelectionner = teddies.find(teddies => teddies['_id'] == idTeddies);
-    // console.log(produitSelectionner);
+    //console.log(produitSelectionner);
     carteProduit (produitSelectionner, idTeddies);
 }
 
@@ -123,7 +123,9 @@ function choixCouleurs(divCard, produitSelectionner) {
     for (let i = 0; i < numeroCouleurs.length; i++) {
         let optionDeLaCouleurs = document.createElement("option");
         couleurChoisi.appendChild(optionDeLaCouleurs);
+        //console.log(optionDeLaCouleurs)
         optionDeLaCouleurs.textContent = produitSelectionner.colors[i];
+        
     }
 }
 
@@ -132,7 +134,7 @@ function choixCouleurs(divCard, produitSelectionner) {
 function ajoutCouleurSelectionner(bouttonAcheter, idTeddies) {
     bouttonAcheter.addEventListener('click', function () {
         let contenuDuPanier = JSON.parse(localStorage.getItem("contenuDuPanier"));
-        console.log(contenuDuPanier)
+        //console.log(contenuDuPanier)
         let couleurValider = document.getElementById('list').value;
         //console.log(couleurValider);
         if (contenuDuPanier === null) {
@@ -149,6 +151,7 @@ class mesArticles {
     constructor(idTeddies, couleurValider) {
         this.idTeddies = idTeddies;
         this.couleurValider = couleurValider;
+        
     }
 }
 

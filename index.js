@@ -7,7 +7,7 @@ async function getTeddies() {
         let response = await fetch("http://localhost:3000/api/teddies");
         if ( response.ok) {
             let teddies = await response.json(); 
-            //console.log(teddies);
+            // console.log(teddies);
             creationCartesPelluches(teddies)
         } else {
             console.error('Erreur serveur : ')
@@ -94,6 +94,8 @@ function urlDynamique(teddies,i,lienProduit) {
     // Création d'un objet url  //
     let urlObj = new URL(url);
     let idTeddies = teddies[i]._id;
+    //console.log(urlObj)
+
     // Ajout du query string id //
     urlObj.searchParams.append("id", idTeddies);
     lienProduit.href = urlObj;
@@ -106,6 +108,7 @@ function urlDynamique(teddies,i,lienProduit) {
 //Création du bouton de redirection avec le bon url //
 function bouttonVoir(lienProduit) {
     let bouttonLien = document.createElement("button");
+    //console.log(bouttonLien)
     lienProduit.appendChild(bouttonLien);
     bouttonLien.classList.add("btn", "btn-primary", "stretched-link" , "block-right");
     bouttonLien.textContent = "Voir";

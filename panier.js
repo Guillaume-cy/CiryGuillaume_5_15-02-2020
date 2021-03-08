@@ -54,11 +54,13 @@ function creationDuPanier(itemTeddie, contenuDuPanier) {
 function ajoutDesPrix(itemTeddie) {
     let itemPrice = itemTeddie.price;
     tableauPrix.push(itemPrice);
+    //console.log(tableauPrix)
 }
 
 //Ajout des id des articles choisis dans le tableau products //
 function addIdProducts(contenuDuPanier) {
     products.push(contenuDuPanier[i].idTeddies);
+    //console.log (products)
 }
 
 //Prix total de la commande //
@@ -68,6 +70,7 @@ function totalPriceOrder(tableauPrix) {
     for (i = 0; i < tableauPrix.length; i++) {
         total = total + tableauPrix[i];
         totalPrice.textContent = "Prix total : " + total / 100 + "$";
+        //console.log(totalPrice)
         //Stockage du prix dans le localStorage pour la page de confirmation
         localStorage.setItem("totalOrder", JSON.stringify(total));
     }
@@ -77,15 +80,16 @@ function totalPriceOrder(tableauPrix) {
 async function recupPanier() {
     try {
         let response = await fetch("http://localhost:3000/api/teddies");
+        //console.log(response)
         if (response.ok) {
             let Teddie = await response.json();
             // Récupérer le bon objet dans l'api
             let contenuDuPanier = JSON.parse(localStorage.getItem("contenuDuPanier")) || {};
-            console.log(contenuDuPanier)
+            //console.log(contenuDuPanier)
 
             for (i = 0; i < contenuDuPanier.length; i++) {
                 let itemTeddie = Teddie.find(Teddie => Teddie['_id'] == contenuDuPanier[i].idTeddies);
-                console.log(itemTeddie);
+                //console.log(itemTeddie);
                 creationDuPanier(itemTeddie, contenuDuPanier);
                 ajoutDesPrix(itemTeddie);
                 addIdProducts(contenuDuPanier);
@@ -131,7 +135,7 @@ function suppPanier() {
 //Récupération de l'id de commande renvoyée par l'API et stockage dans le localStorage
 function idConfimation(responseId) {
     let orderId = responseId.orderId;
-    console.log(orderId);
+    //console.log(orderId);
     localStorage.setItem("orderConfirmationId", orderId);
 }
 
@@ -143,6 +147,7 @@ function getForm() {
     let city = document.getElementById('city').value;
     let email = document.getElementById('email').value;
     contact = new ContactData(firstname, lastname, address, city, email);
+    console.log(contact)
 }
 
 //Requête POST pour envoyer les infos Contact et le tableau products à l'API
@@ -158,7 +163,7 @@ async function postForm(dataToSend) {
         if (response.ok) {
             let responseId = await response.json();
             idConfimation(responseId);
-            window.location.href = "confirmation.html";
+            window.location.href = "confirmation.html"; // A mettre en commentaire afin de tester "getForm" et "postForm" //
         } else {
             console.error('Retour du serveur : ', response.status);
         }
